@@ -1,4 +1,4 @@
-# Projeto Precinho
+# Projeto Precinho 🏷️
 
 **Comparador de preços online entre diferentes lojas brasileiras.**
 
