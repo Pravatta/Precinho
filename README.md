@@ -33,8 +33,13 @@ Precinho/
 ├── interface/
 │   └── app.py               # Interface principal com Streamlit
 │
+├── scraping/                # Scripts de scraping separados por loja
+│   ├── amazon.py            # Scraper da Amazon (Wollace)
+│   └── kabum.py             # Scraper da Kabum (Jonatha)
+│
 ├── data/                    # Arquivos JSON dos preços coletados
-│   └── (vazio por enquanto)
+│   ├── amazon_precos.json
+│   └── kabum_precos.json
 │
 ├── shared/
 │   └── utils.py             # Funções auxiliares (formatação, limpeza, etc.)
@@ -49,6 +54,7 @@ Precinho/
 ├── README.md                # Documentação do projeto
 ├── LICENSE                  # Licença MIT
 ├── requirements.txt         # Dependências do projeto
+
 ```
 
 ---
