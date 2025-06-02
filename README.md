@@ -1,61 +1,73 @@
-# Projeto Precinho 🏷️
 
+# Projeto Precinho 🏷️  
 **Comparador de preços online entre diferentes lojas brasileiras.**
 
 ---
 
 ## 📌 Sobre o Projeto
 
-O **Projeto Precinho** é uma plataforma que tem como objetivo facilitar a vida dos consumidores, permitindo comparar preços de produtos em várias lojas automaticamente.  
+O **Projeto Precinho** é uma plataforma desenvolvida para ajudar consumidores a **comparar preços de produtos entre lojas online brasileiras de forma automatizada**.  
 
-Ele está sendo desenvolvido por dois estudantes — um focado em **RPA e Automação** e o outro em **Ciência de Dados** — utilizando técnicas de scraping, análise e visualização de dados.
+Idealizado e desenvolvido por dois estudantes — um com foco em **RPA e Automação** e o outro em **Ciência de Dados** — o projeto combina **web scraping, uso de APIs, banco de dados relacional** e **visualização interativa de informações**.
 
-Este projeto está em fase inicial, com foco em **coleta automatizada**, **organização dos dados** e **visualização acessível e interativa**.
+A nova versão substitui os arquivos JSON por um banco de dados **PostgreSQL**, garantindo maior **persistência, escalabilidade e integridade dos dados**. Também foi implementado um scraper mais eficiente para a KaBuM, agora baseado diretamente em sua **API pública**.
 
 ---
 
 ## 🚦 Status do Projeto
 
-🟡 **Em planejamento**  
-- [x] Definição inicial do escopo  
-- [x] Organização da estrutura de pastas e arquivos  
-- [ ] Desenvolvimento do front-end  
-- [ ] Criação dos scripts de coleta de dados (Scraping)  
-- [ ] Implementação da lógica de comparação  
-- [ ] Deploy da aplicação  
+🟡 **Em desenvolvimento**  
+- [x] Definição do escopo  
+- [x] Estrutura inicial de diretórios  
+- [x] Substituição de JSON por banco PostgreSQL  
+- [x] Implementação de coleta via API (KaBuM)  
+- [ ] Scrapers para outras lojas (Amazon, Magalu, etc.)  
+- [ ] Interface com Streamlit para visualização  
+- [ ] Lógica de comparação de preços  
+- [ ] Deploy da aplicação (Docker + Streamlit Cloud)
 
 ---
 
-## 📁 Estrutura Atual do Projeto
+## 🧱 Estrutura Atual do Projeto
 
 ```bash
 Precinho/
 ├── interface/
-│   └── app.py               # Interface principal com Streamlit
+│   └── app.py               # Interface principal (Streamlit)
 │
-├── scraping/                # Scripts de scraping separados por loja
-│   ├── amazon.py            # Scraper da Amazon (Wollace)
-│   └── kabum.py             # Scraper da Kabum (Jonatha)
+├── scraping/
+│   ├── kabum.py             # Coletor da KaBuM via API
+│   └── amazon.py            # Em desenvolvimento (scraping)
 │
-├── data/                    # Arquivos JSON dos preços coletados
-│   ├── amazon_precos.json
-│   └── kabum_precos.json
+├── database/
+│   ├── db.py                # Conexão e funções auxiliares para PostgreSQL
+│   └── models.sql           # Scripts de criação de tabelas
 │
 ├── shared/
-│   └── utils.py             # Funções auxiliares (formatação, limpeza, etc.)
+│   └── utils.py             # Funções de formatação, limpeza etc.
 │
-├── assets/                  # Logos, imagens e ícones (se necessário)
-│
-├── export/                  # Exportações em CSV/Excel
-│
+├── assets/                  # Logos, ícones e imagens (opcional)
+├── export/                  # Exportações futuras (CSV, Excel)
 ├── config/
-│   └── streamlit.config     # Configurações do modo escuro e outros
+│   └── streamlit.config     # Configurações visuais e gerais
 │
-├── README.md                # Documentação do projeto
+├── README.md                # Este arquivo :)
 ├── LICENSE                  # Licença MIT
 ├── requirements.txt         # Dependências do projeto
-
 ```
+
+---
+
+## 🔄 Principais Atualizações
+
+- 📦 **Migração de JSON para PostgreSQL**  
+  Agora os dados de preços são armazenados diretamente no banco de dados, facilitando consultas e análises posteriores.
+
+- ⚙️ **Scraper da KaBuM via API Pública**  
+  O coletor foi refeito utilizando a API oficial da KaBuM, tornando a coleta mais rápida e confiável, além de reduzir riscos de bloqueio.
+
+- 🧠 **Planejamento da Interface com Streamlit**  
+  A visualização dos preços será feita por meio de gráficos e filtros interativos, com atualização em tempo real a partir do banco de dados.
 
 ---
 
@@ -68,5 +80,5 @@ Precinho/
 
 ## 📄 Licença
 
-Este projeto está sob a licença **MIT**.  
-Consulte o arquivo [`LICENSE`](LICENSE) para mais detalhes.
+Este projeto está licenciado sob os termos da **MIT License**.  
+Veja mais no arquivo [`LICENSE`](LICENSE).
