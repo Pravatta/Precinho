@@ -39,10 +39,6 @@ Precinho/
 │   ├── kabum.py             # Coletor da KaBuM via API
 │   └── amazon.py            # Em desenvolvimento (scraping)
 │
-├── database/
-│   ├── db.py                # Conexão e funções auxiliares para PostgreSQL
-│   └── models.sql           # Scripts de criação de tabelas
-│
 ├── shared/
 │   └── utils.py             # Funções de formatação, limpeza etc.
 │
