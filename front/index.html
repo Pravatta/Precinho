@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precinho - Categorias</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Cabeçalho com logo e busca centralizada -->
+  <header class="topbar">
+    <div class="topbar-row">
+      <div class="menu-logo">
+        <img src="../assets/icon.png" alt="Logo Precinho" class="logo" />
+      </div>
+      <div class="search-wrapper">
+        <div class="custom-dropdown" id="dropdown">
+          <div class="custom-dropdown-toggle">Todas as categorias</div>
+          <div class="custom-dropdown-menu">
+            <a href="/celular">
+              <img src="https://s.zst.com.br/prod/brickz/celular_a71ef87480_5c1091bc5e.svg" width="18" />
+              Celulares
+            </a>
+            <a href="/tv">
+              <img src="https://s.zst.com.br/prod/brickz/TV_3fca037cce_d0b7787bab.svg" width="18" />
+              TV
+            </a>
+            <a href="/geladeira">
+              <img src="https://s.zst.com.br/prod/brickz/Geladeira_Hotlink_10d11bb247_10771bd450.svg" width="18" />
+              Geladeira
+            </a>
+          </div>
+        </div>
+        <input type="text" placeholder="Digite sua busca..." />
+        <button class="search-btn">
+          <img src="https://cdn-icons-png.freepik.com/512/324/324654.png" alt="Buscar" />
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Categorias -->
+  <div class="categorias-container">
+    <a class="categoria-item" href="/celular">
+      <img src="https://s.zst.com.br/prod/brickz/celular_a71ef87480_5c1091bc5e.svg" alt="Celular" />
+      <span class="categoria-label">Celular</span>
+    </a>
+    <a class="categoria-item" href="/geladeira">
+      <img src="https://s.zst.com.br/prod/brickz/Geladeira_Hotlink_10d11bb247_10771bd450.svg" alt="Geladeira" />
+      <span class="categoria-label">Geladeira</span>
+    </a>
+    <a class="categoria-item" href="/notebook">
+      <img src="https://s.zst.com.br/prod/brickz/icon_notebook_c6b6e251a1.svg" alt="Notebook" />
+      <span class="categoria-label">Notebook</span>
+    </a>
+    <a class="categoria-item" href="/tv">
+      <img src="https://s.zst.com.br/prod/brickz/TV_3fca037cce_d0b7787bab.svg" alt="TV" />
+      <span class="categoria-label">TV</span>
+    </a>
+    <a class="categoria-item" href="/fogao">
+      <img src="https://s.zst.com.br/prod/brickz/icon_fogao_62b6b02e49.svg" alt="Fogão" />
+      <span class="categoria-label">Fogão</span>
+    </a>
+    <a class="categoria-item" href="/lavadora-roupas">
+      <img src="https://s.zst.com.br/prod/brickz/icon_lavadora_6e2f7c8768.svg" alt="Lavadora" />
+      <span class="categoria-label">Lavadora</span>
+    </a>
+    <a class="categoria-item" href="/todas-categorias">
+      <img src="https://s.zst.com.br/prod/brickz/Todas_as_Categorias_ver_mais_c000cf5015_0b23e59f1e.svg" alt="Mais Categorias" />
+      <span class="categoria-label">Mais</span>
+    </a>
+  </div>
+
+  <!-- Script dropdown -->
+  <script>
+    const dropdown = document.getElementById("dropdown");
+    const toggle = dropdown.querySelector(".custom-dropdown-toggle");
+    const menu = dropdown.querySelector(".custom-dropdown-menu");
+
+    toggle.addEventListener("click", () => {
+      dropdown.classList.toggle("open");
+    });
+
+    menu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        toggle.textContent = link.textContent.trim();
+        dropdown.classList.remove("open");
+      });
+    });
+
+    window.addEventListener("click", e => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("open");
+      }
+    });
+  </script>
+
+</body>
+</html>
