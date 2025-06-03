@@ -16,15 +16,16 @@ A nova versão substitui os arquivos JSON por um banco de dados **PostgreSQL**, 
 
 ## 🚦 Status do Projeto
 
-🟡 **Em desenvolvimento**  
-- [x] Definição do escopo  
-- [x] Estrutura inicial de diretórios  
-- [x] Substituição de JSON por banco PostgreSQL  
-- [x] Implementação de coleta via API (KaBuM)  
-- [ ] Scrapers para outras lojas (Amazon, Magalu, etc.)  
-- [ ] Interface com Streamlit para visualização  
-- [ ] Lógica de comparação de preços  
-- [ ] Deploy da aplicação (Docker + Streamlit Cloud)
+🟡 **Em desenvolvimento**
+
+* [x] Definição do escopo
+* [x] Estrutura inicial de diretórios
+* [x] Substituição de JSON por banco PostgreSQL
+* [x] Implementação de coleta via API (KaBuM)
+* [x] Início do front-end com Streamlit
+* [ ] Scrapers para outras lojas (Amazon, Magalu, etc.)
+* [ ] Lógica de comparação de preços
+* [ ] Deploy da aplicação (Docker + Streamlit Cloud)
 
 ---
 
